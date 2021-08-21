@@ -2,7 +2,7 @@ package com.gereric.maxnumber;
 
 public class MaxNumber {
 
-	public static void findMaximum(Integer x,Integer y,Integer z)
+	public static void findMaximum(Float x,Float y,Float z)
 	{
 		if(x.compareTo(y)>0 && x.compareTo(z)>0)
 			System.out.println("Maximum number is X = "+x);
@@ -13,9 +13,7 @@ public class MaxNumber {
 	}
 	public static void main(String[] args) 
 	{
-		Integer x=70;
-		Integer y=20;
-		Integer z=30;
+		Float x=70.2f,y=20f,z=30f;
 		findMaximum(x,y,z);
 	}
 
