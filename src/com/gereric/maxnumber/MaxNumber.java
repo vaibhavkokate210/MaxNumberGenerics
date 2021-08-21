@@ -2,18 +2,18 @@ package com.gereric.maxnumber;
 
 public class MaxNumber {
 
-	public static void findMaximum(Float x,Float y,Float z)
+	public static void findMaximum(String x,String y,String z)
 	{
 		if(x.compareTo(y)>0 && x.compareTo(z)>0)
-			System.out.println("Maximum number is X = "+x);
+			System.out.println("Maximum String is X = "+x);
 		else if(y.compareTo(x)>0 && y.compareTo(z)>0)
-			System.out.println("Maximum number is Y = "+y);
+			System.out.println("Maximum String is Y = "+y);
 		else
-			System.out.println("Maximum number is Z = "+z);
+			System.out.println("Maximum String is Z = "+z);
 	}
 	public static void main(String[] args) 
 	{
-		Float x=70.2f,y=20f,z=30f;
+		String x="Ajay",y="Akshay",z="Rohit";
 		findMaximum(x,y,z);
 	}
 
