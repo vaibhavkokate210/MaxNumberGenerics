@@ -1,8 +1,24 @@
 package com.gereric.maxnumber;
 
-public class MaxNumber 
+public class MaxNumber<T extends Comparable<T>> 
 {
-	public static<T extends Comparable<T>>void findMaximum(T x,T y,T z)
+	T x;
+	T y;
+	T z;
+	
+	public MaxNumber(T x, T y, T z) 
+	{
+		super();
+		this.x = x;
+		this.y = y;
+		this.z = z;
+	}
+	
+	public void testMaximum()
+	{
+		MaxNumber.testMaximum(this.x,this.y,this.z);
+	}
+	public static <T extends Comparable<T>>void testMaximum(T x,T y,T z)
 	{
 		if(x.compareTo(y)>0 && x.compareTo(z)>0)
 			System.out.println("Maximum String is X = "+x);
@@ -13,12 +29,12 @@ public class MaxNumber
 	}
 	public static void main(String[] args) 
 	{
-		int a=10,b=5,c=20;
-		float l=500f,m=20f,n=90f;
-		String x="Ajay",y="Akshay",z="Rohit";
-		findMaximum(a,b,c);
-		findMaximum(x,y,z);
-		findMaximum(l,m,n);
+		MaxNumber m=new MaxNumber(10,5,20);
+		MaxNumber m1=new MaxNumber(100f,545f,220f);
+		MaxNumber m2=new MaxNumber("Ajay","Suraj","Rohit");
+		m.testMaximum();
+        m1.testMaximum();
+        m2.testMaximum();
 	}
 
 
