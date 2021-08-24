@@ -13,9 +13,14 @@ public class MaxNumber<T extends Comparable<T>>
 	
 	public void testMaximum()
 	{
-		MaxNumber.testMaximum(arr);
+		System.out.println("Maximum element = "+printMax(arr));
 	}
-	public static <T extends Comparable<T>>void testMaximum(T[] arr)
+	
+	public T printMax(T[] arr)
+	{
+		return testMaximum(arr);	
+	}
+	public static <T extends Comparable<T>>T testMaximum(T[] arr)
 	{
 		for(int i=0;i<arr.length;i++)
 		{
@@ -29,13 +34,13 @@ public class MaxNumber<T extends Comparable<T>>
 				}
 			}
 		}
-		System.out.println("Maximum element is = "+arr[arr.length-1]);
+		return (arr[arr.length-1]);
 	}
 	public static void main(String[] args) 
 	{
-		MaxNumber m=new MaxNumber(10,5,20);
-		MaxNumber m1=new MaxNumber(100f,545f,220f);
-		MaxNumber m2=new MaxNumber("Ajay","Suraj","Rohit");
+		MaxNumber m=new MaxNumber(10,5,20,44,67,87);
+		MaxNumber m1=new MaxNumber(100f,545f,220f,78f,1f);
+		MaxNumber m2=new MaxNumber("Ajay","Suraj","Rohit","Jayesh","Pritesh");
 		m.testMaximum();
         m1.testMaximum();
         m2.testMaximum();
