@@ -1,31 +1,35 @@
 package com.gereric.maxnumber;
 
+import java.util.Arrays;
+
 public class MaxNumber<T extends Comparable<T>> 
 {
-	T x;
-	T y;
-	T z;
-	
-	public MaxNumber(T x, T y, T z) 
+	T arr[];
+
+	public MaxNumber(T ...arr) 
 	{
-		super();
-		this.x = x;
-		this.y = y;
-		this.z = z;
+		this.arr=arr;
 	}
 	
 	public void testMaximum()
 	{
-		MaxNumber.testMaximum(this.x,this.y,this.z);
+		MaxNumber.testMaximum(arr);
 	}
-	public static <T extends Comparable<T>>void testMaximum(T x,T y,T z)
+	public static <T extends Comparable<T>>void testMaximum(T[] arr)
 	{
-		if(x.compareTo(y)>0 && x.compareTo(z)>0)
-			System.out.println("Maximum String is X = "+x);
-		else if(y.compareTo(x)>0 && y.compareTo(z)>0)
-			System.out.println("Maximum String is Y = "+y);
-		else
-			System.out.println("Maximum String is Z = "+z);
+		for(int i=0;i<arr.length;i++)
+		{
+			for(int j=0;j<arr.length-1;j++)
+			{
+				if(arr[j].compareTo(arr[j+1])>0)
+				{
+					T temp=arr[j];
+					arr[j]=arr[j+1];
+					arr[j+1]=temp;		
+				}
+			}
+		}
+		System.out.println("Maximum element is = "+arr[arr.length-1]);
 	}
 	public static void main(String[] args) 
 	{
